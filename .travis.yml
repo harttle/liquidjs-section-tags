@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+    - "10"
+jobs:
+  include:
+    - stage: test
+      name: 'Lint'
+      script: npm run lint
+    - name: 'Coverage'
+      script: npm run coverage-coveralls
+    - name: 'Build'
+      script: npm run build
+    - stage: release
+      if: branch = master
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npx semantic-release

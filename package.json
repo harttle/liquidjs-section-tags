@@ -1,0 +1,88 @@
+{
+  "name": "liquidjs-section-tags",
+  "version": "1.0.0",
+  "description": "liquidjs plugin for section tags",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "test": "mocha \"test/**/*.ts\"",
+    "coverage-html": "nyc --reporter=html mocha \"test/**/*.ts\"",
+    "coverage-coveralls": "nyc mocha \"test/**/*.ts\" && nyc report --reporter=text-lcov | coveralls",
+    "build": "tsc",
+    "version": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harttle/liquidjs-section-tags.git"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=4.8.7"
+  },
+  "keywords": [
+    "liquid",
+    "section",
+    "tag"
+  ],
+  "author": "Harttle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harttle/liquidjs-section-tags/issues"
+  },
+  "homepage": "https://github.com/harttle/liquidjs-section-tags#readme",
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/npm": "^5.1.8",
+    "@semantic-release/release-notes-generator": "^7.1.4",
+    "@types/chai": "^4.1.7",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/mocha": "^5.2.6",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "benchmark": "^2.1.4",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.12.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-mocha": "^5.3.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "liquidjs": "^8.4.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "regenerator-runtime": "^0.12.1",
+    "semantic-release": "^15.13.14",
+    "ts-node": "^8.0.2",
+    "tslib": "^1.9.3",
+    "typescript": "^3.3.3"
+  },
+  "release": {
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ]
+  },
+  "dependencies": {
+    "sass": "^1.22.7"
+  }
+}
