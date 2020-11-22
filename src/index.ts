@@ -1,21 +1,12 @@
 import { Liquid } from 'liquidjs'
-import { sectionTag } from './section'
-import { Schema } from './schema'
-import { StyleSheet } from './stylesheet'
 import { JavaScript } from './javascript'
+import { Schema } from './schema'
+import { Section } from './section'
+import { StyleSheet } from './stylesheet'
 
-interface SectionOptions {
-  /* root directory for sections */
-  root?: string;
-}
-
-export function liquidSectionTags (options: Partial<SectionOptions> = {}): (this: Liquid) => void {
-  const opts = Object.assign({
-    root: 'sections'
-  }, options)
-
-  return function (this: Liquid) {
-    this.registerTag('section', sectionTag(opts.root))
+export function liquidSectionTags () {
+  return function (this: Liquid): void {
+    this.registerTag('section', Section)
     this.registerTag('schema', Schema)
     this.registerTag('stylesheet', StyleSheet)
     this.registerTag('javascript', JavaScript)

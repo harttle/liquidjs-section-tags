@@ -1,16 +1,17 @@
-import { Liquid } from 'liquidjs'
 import { expect } from 'chai'
-import { liquidSectionTags } from '../src/index'
+import { Liquid } from 'liquidjs'
 import { resolve } from 'path'
+import { liquidSectionTags } from '../src/index'
 
 describe('section', function () {
   let liquid: Liquid
 
   before(function () {
-    liquid = new Liquid({ extname: '.liquid' })
-    liquid.plugin(liquidSectionTags({
-      root: resolve(__dirname, './stub/sections')
-    }))
+    liquid = new Liquid({
+      extname: '.liquid',
+      root: [resolve(__dirname, './stub/sections')]
+    })
+    liquid.plugin(liquidSectionTags())
   })
 
   it('should render section', async () => {

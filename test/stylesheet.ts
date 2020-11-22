@@ -6,11 +6,12 @@ import { liquidSectionTags } from '../src/index'
 describe('stylesheet', function () {
   let liquid: Liquid
   before(function () {
-    liquid = new Liquid({ extname: '.liquid' })
+    liquid = new Liquid({
+      extname: '.liquid',
+      root: [resolve(__dirname, './stub/sections')]
+    })
     liquid.plugin(
-      liquidSectionTags({
-        root: resolve(__dirname, './stub/sections')
-      })
+      liquidSectionTags()
     )
   })
 

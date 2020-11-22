@@ -1,4 +1,4 @@
-{{ section.settings.first_title }}
+{{ section.settings.title }}, {% if section.settings.menu_enable %}menu_enabled:{{section.settings.menu_enable | jsonify}}{% endif %}
 
 {% schema %}
   {
@@ -10,13 +10,13 @@
       },
       {
         "type": "checkbox",
-        "id": "first_menu_enable",
+        "id": "menu_enable",
         "label": "Enable Menu",
         "default": true
       },
       {
         "type": "text",
-        "id": "first_title",
+        "id": "title",
         "label": "Menu Title",
         "default": "Menu 1"
       }

@@ -1,0 +1,27 @@
+{%- for block in section.blocks -%}
+  {{ block.type }}, {{ block.settings.content }}
+{%- endfor -%}
+
+{% schema %}
+  {
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Quote",
+        "settings": [
+          {
+            "id": "content",
+            "type": "text",
+            "label": "Quote"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "settings": {
+          "content": "Once upon a time..."
+        }
+      }
+    ]
+  }
+{% endschema %}
