@@ -1,0 +1,25 @@
+{{ section.settings.first_title }}
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "First Menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "first_menu_enable",
+        "label": "Enable Menu",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "first_title",
+        "label": "Menu Title",
+        "default": "Menu 1"
+      }
+    ]
+  }
+{% endschema %}

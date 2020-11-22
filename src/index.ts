@@ -1,4 +1,4 @@
-import Liquid from 'liquidjs'
+import { Liquid } from 'liquidjs'
 import { sectionTag } from './section'
 import { Schema } from './schema'
 import { StyleSheet } from './stylesheet'
@@ -9,10 +9,11 @@ interface SectionOptions {
   root?: string;
 }
 
-export function liquidSectionTags (options: Partial<SectionOptions> = {}) {
+export function liquidSectionTags (options: Partial<SectionOptions> = {}): (this: Liquid) => void {
   const opts = Object.assign({
     root: 'sections'
   }, options)
+
   return function (this: Liquid) {
     this.registerTag('section', sectionTag(opts.root))
     this.registerTag('schema', Schema)
