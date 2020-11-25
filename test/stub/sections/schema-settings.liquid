@@ -1,0 +1,25 @@
+{{ section.settings.title }}, {% if section.settings.menu_enable %}menu_enabled:{{section.settings.menu_enable | jsonify}}{% endif %}
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "First Menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "menu_enable",
+        "label": "Enable Menu",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Menu Title",
+        "default": "Menu 1"
+      }
+    ]
+  }
+{% endschema %}

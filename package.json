@@ -22,7 +22,7 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=4.8.7"
+    "node": ">=10"
   },
   "keywords": [
     "liquid",
@@ -36,35 +36,35 @@
   },
   "homepage": "https://github.com/harttle/liquidjs-section-tags#readme",
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.2",
-    "@semantic-release/commit-analyzer": "^6.1.0",
-    "@semantic-release/git": "^7.0.8",
-    "@semantic-release/npm": "^5.1.8",
-    "@semantic-release/release-notes-generator": "^7.1.4",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/npm": "^7.0.8",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "@types/chai": "^4.1.7",
     "@types/chai-as-promised": "^7.1.0",
-    "@types/mocha": "^5.2.6",
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
-    "@typescript-eslint/parser": "^1.11.0",
+    "@types/mocha": "^8.0.4",
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
     "benchmark": "^2.1.4",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^3.0.2",
-    "eslint": "^5.12.1",
-    "eslint-config-standard": "^12.0.0",
+    "eslint": "^7.14.0",
+    "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.15.0",
-    "eslint-plugin-mocha": "^5.3.0",
-    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "liquidjs": "^8.4.0",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
-    "regenerator-runtime": "^0.12.1",
-    "semantic-release": "^15.13.14",
-    "ts-node": "^8.0.2",
-    "tslib": "^1.9.3",
-    "typescript": "^3.3.3"
+    "eslint-plugin-standard": "^4.1.0",
+    "liquidjs": "^9.16.1",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "regenerator-runtime": "^0.13.7",
+    "semantic-release": "^17.2.4",
+    "ts-node": "^9.0.0",
+    "tslib": "^2.0.3",
+    "typescript": "^4.1.2"
   },
   "release": {
     "branch": "master",
@@ -81,6 +81,10 @@
     "extension": [
       ".ts"
     ]
+  },
+  "mocha": {
+    "require": "ts-node/register/transpile-only",
+    "strict": "strict"
   },
   "dependencies": {
     "sass": "^1.22.7"
